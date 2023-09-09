@@ -25,8 +25,6 @@ function App() {
 
         if (data.user) {
             localStorage.setItem('token', data.user);
-            localStorage.setItem('userName', data.userName);
-            localStorage.setItem('userEmail',data.userEmail); // Store the user's name
             alert('Login successful');
             window.location.href = '/dashboard';
         } else {

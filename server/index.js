@@ -2,8 +2,10 @@ const express = require('express');
 const app = express();
 const mongoose = require('mongoose');
 const cors = require('cors');
-
 const User = require('./models/user.model');
+const jwt = require('jsonwebtoken');
+const bcrypt = require('bcryptjs');
+
 
 
 app.use(cors()); // Use the cors middleware
@@ -44,6 +46,8 @@ app.post('/api/login', async (req, res) => {
     return res.json({ status: 'error', user: false });
   }
 });
+
+
 
 app.listen(1337, () => {
   console.log('Server started on 1337');
